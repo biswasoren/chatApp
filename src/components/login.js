@@ -36,6 +36,7 @@ class Login extends React.Component {
             if (usrData.length !== 0) {
             if (usrData[0].password === password.value) {
               socket.emit('add_user', userName.value);
+              localStorage.setItem('active_user', userName.value);
               userName.value = null;
               password.value = null;
               this.props.updateState({

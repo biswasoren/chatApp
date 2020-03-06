@@ -35,7 +35,7 @@ class Container extends React.Component {
         <Login updateState={this.updateState}/>
         </div>
        
-        <div style={{ display: this.state.switch.chat}}>
+        <div style={{ display: this.state.switch.chat, height: '100vh'}}>
         <ChatBox updateState={this.updateState}/>
         </div>
         
