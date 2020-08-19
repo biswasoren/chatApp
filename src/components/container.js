@@ -1,7 +1,6 @@
 import React from 'react';
 import ChatBox from './chatBox'
 import Login from './login'
-import Register from './register'
 import './chatBox.css';
 
 
@@ -31,18 +30,13 @@ class Container extends React.Component {
     render() {
       return (
         <div>
-        <div style={{ display: this.state.switch.login}}>
+        <div style={{ display: this.state.switch.login, height: '100vh'}}>
         <Login updateState={this.updateState}/>
         </div>
        
         <div style={{ display: this.state.switch.chat, height: '100vh'}}>
         <ChatBox updateState={this.updateState}/>
         </div>
-        
-        <div style={{ display: this.state.switch.register}}>
-        <Register updateState={this.updateState}/>
-        </div>
-        
         </div>
       );
     }

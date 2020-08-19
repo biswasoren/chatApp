@@ -1,13 +1,26 @@
 .card {
     position: relative;
-    margin: 0 auto;
+    width: 40%;
     display: flex;
-    width: 600px;
     align-items: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #282c34;
+    background: rgba(9, 11, 58, 0.72);
+    height: 100%;
+    color: white;
+    border-top-left-radius: 0.5%;
+    border-top-right-radius: 0.5%;
+  }
+
+  .card2 {
+    position: relative;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     color: white;
     border-top-left-radius: 0.5%;
@@ -18,14 +31,101 @@
     position: relative;
     margin: 0 auto;
     display: flex;
-    width: 500px;
-    align-items: center;
+    width: 420px;
+    height: 420px;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    background-color: #767e8f;
-    height: 450px;
     color: white;
-    border-top-left-radius: 0.5%;
-    border-top-right-radius: 0.5%;
+    background: rgba(9, 11, 58, 0.35);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+}
+
+.form2 {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  width: 420px;
+  height: 420px;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  background: #F3F3F3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+}
+
+.form2 .placeholder .ui.input>input {
+  background: #C4C4C4;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  width: 258px;
+  height: 45px;
+  color:black;
+  }
+
+.form .placeholder .ui.input>input {
+  background: rgba(31, 32, 64, 0.4);
+  border: 1px solid #090000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.61);
+  border-radius: 12px;
+  width: 258px;
+  height: 45px;
+  color: white;
+}
+.placeholder {
+  display: flex;
+}
+.placeholder.right {
+  flex-direction: row-reverse;
+}
+
+.form .placeholder .ui.input>input:focus {
+  color: white;
+}
+
+.form2 .placeholder .ui.input>input:focus {
+  color: black;
+}
+.form2 .placeholder .ui.input>input::placeholder {
+  color:  rgba(31, 32, 64, 0.4);
+}
+.button-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+.btn-pri{
+  background: #C4C4C4;
+border: 1px solid #000000;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 12px;
+width: 125px;
+height: 45px;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+text-align: center;
+outline: none;
+cursor: pointer;
+}
+.btn-sec{
+  background: rgba(31, 32, 64, 0.8);
+mix-blend-mode: normal;
+border: 1px solid #090000;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.61);
+border-radius: 12px;
+width: 125px;
+height: 45px;
+color: white;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+text-align: center;
+outline: none;
+cursor: pointer;
 }
