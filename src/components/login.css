@@ -9,8 +9,6 @@
     background: rgba(9, 11, 58, 0.72);
     height: 100%;
     color: white;
-    border-top-left-radius: 0.5%;
-    border-top-right-radius: 0.5%;
   }
 
   .card2 {
@@ -23,8 +21,6 @@
     justify-content: center;
     height: 100%;
     color: white;
-    border-top-left-radius: 0.5%;
-    border-top-right-radius: 0.5%;
   }
 
 .form {
@@ -56,26 +52,21 @@
 }
 
 .form2 .placeholder .ui.input>input {
-  background: #C4C4C4;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 12px;
-  width: 258px;
-  height: 45px;
-  color:black;
+    width: 258px;
+    height: 56px;
+    border-radius: 0 12px 12px 0;
+    color: black;
+    font-size: 16px;
   }
 
 .form .placeholder .ui.input>input {
   background: rgba(31, 32, 64, 0.4);
-  border: 1px solid #090000;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.61);
-  border-radius: 12px;
+  border-radius: 0 12px 12px 0;
   width: 258px;
-  height: 45px;
-  color: white;
+  height: 56px;
+  font-size: 16px;
 }
+
 .placeholder {
   display: flex;
 }
@@ -99,33 +90,26 @@
 }
 .btn-pri{
   background: #C4C4C4;
-border: 1px solid #000000;
-box-sizing: border-box;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 12px;
-width: 125px;
-height: 45px;
-font-weight: bold;
-font-size: 24px;
-line-height: 28px;
-text-align: center;
-outline: none;
-cursor: pointer;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  width: 125px;
+  height: 45px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+  cursor: pointer;
 }
 .btn-sec{
   background: rgba(31, 32, 64, 0.8);
-mix-blend-mode: normal;
-border: 1px solid #090000;
-box-sizing: border-box;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.61);
-border-radius: 12px;
-width: 125px;
-height: 45px;
-color: white;
-font-weight: bold;
-font-size: 24px;
-line-height: 28px;
-text-align: center;
-outline: none;
-cursor: pointer;
+  border-radius: 12px;
+  width: 125px;
+  height: 45px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+  cursor: pointer;
 }

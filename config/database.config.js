@@ -1,5 +1,5 @@
 module.exports = {
-    url: 'mongodb://biswa:biswa123@ds257838.mlab.com:57838/heroku_4p2zql72',
+    url: 'mongodb://localhost:27017/chat',
     options: {
         poolsize: 20,
         db: {

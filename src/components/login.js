@@ -65,14 +65,12 @@ class Login extends React.Component {
               
             }
             else {
-              alert('Paswword is incorrect');
+              alert('Password is incorrect');
             }
           }
           else {
             alert('User not found');
           }
-
-            
         });
        
     }
@@ -81,6 +79,7 @@ class Login extends React.Component {
       const style = {};
       style.opacity= this.state.activePage === 'signup' ? '1' : '0.4';
       style.width = this.state.activePage === 'signup' ? '60%' : '40%';
+      style.transition = '1.5s';
 
       const view = <div className="card" style={style}>
       <div className="form">
@@ -98,11 +97,11 @@ class Login extends React.Component {
           margin: '10px 0'
           }}
           onClick={() => {
-            requestAnimationFrame(() => 
+            
             this.setState({activePage: 'signin'})
-            )
+  
           }}>
-          Sign In
+          SIGN IN
         </button>
         <button className="btn-sec" style={{
          margin: '10px 0'
@@ -110,7 +109,7 @@ class Login extends React.Component {
          onClick={() => {
             this.register()
          }}>
-          Register
+          REGISTER
         </button>
         </div>
         </div>
@@ -123,6 +122,7 @@ class Login extends React.Component {
       const style = {};
       style.opacity= this.state.activePage === 'signin' ? '1' : '0.4';
       style.width = this.state.activePage === 'signin' ? '60%' : '40%';
+      style.transition = '1.5s';
 
       const view = <div className="card2" style={style}>
         <div className="form2">
@@ -142,7 +142,7 @@ class Login extends React.Component {
             onClick={() => {
               this.setState({activePage: 'signup'})
             }}>
-            Sign Up
+            SIGN UP
           </button>
           <button className="btn-pri" style={{
            margin: '10px 0'
@@ -150,7 +150,7 @@ class Login extends React.Component {
            onClick={() => {
               this.login()
            }}>
-            Login
+            LOGIN
           </button>
           </div>
           </div>
@@ -162,7 +162,7 @@ class Login extends React.Component {
       return (
         <div style={{height: '100%'}}>
           <div className="header"></div>
-          <div className="conatiner">
+          <div className="container">
           {this.displayRegister()}
           {this.displayLogin()}
         </div>

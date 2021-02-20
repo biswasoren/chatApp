@@ -34,12 +34,12 @@ class ChatBox extends React.Component {
       return (
         <div style={{height: '100%'}}>
           <div className="header"></div>
-          <div className="conatiner">
+          <div className="container">
             <div className="nav"> </div>
         <div style={{width: '90%'}}>
         <div style={{ display: 'flex', height: 'calc(100% - 106px)', margin: '22px'}}>
           <div className="message-info">
-            <div className="message-header"> Anonomous Group </div>
+            <div className="message-header"> Anonymous Group </div>
           <div className="message-card">
           <Box />
           </div>
