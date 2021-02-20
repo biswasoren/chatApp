@@ -45,14 +45,11 @@ class ChatBox extends React.Component {
           </div>
           </div>
         <div className="list"> 
-          <div style={{margin: '8px 0', fontWeight: '800'}}>Users
+          <div className="side-panel-header">Users
             </div>
             {
               this.state.users.length > 0 ? this.state.users.map(user => 
-              <div style={{
-                textAlign: 'left',
-                padding: '0 30px'
-              }}> {user}
+              <div className="side-panel-user-list"> {user}
                 </div>)
                 : null
             }

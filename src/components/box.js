@@ -99,7 +99,7 @@ class Box extends React.Component {
             </div>
           <div className={`message ${activeUser === msg.sent_from ? 'active' : ''}`}>
           <div className="msg">{msg.msg}</div>
-          <div style={{display: 'flex'}}><img src={this.setImage(msg.tone)} style={{width: '30px'}} alt='emogi'/></div>
+          <div style={{display: 'flex'}}><img src={this.setImage(msg.tone)} style={{width: '30px'}} alt='emoji'/></div>
           </div>
           <div className="time">{new Date(`${msg.time}`).toLocaleTimeString() } ({new Date(`${msg.time}`).toDateString()})</div>
         </div>

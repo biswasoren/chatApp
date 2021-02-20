@@ -1,7 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import './send.css'
-import { Button, Icon } from 'semantic-ui-react'
 import { socket } from './socket';
 
 
@@ -40,12 +39,9 @@ class Send extends React.Component {
             <input id="msgBox" placeholder='Type Your Message'/>
             </div>
             <div className="sendBtn">
-            <Button animated onClick={() => {this.sendMsg()}}>
-            <Button.Content visible>Send</Button.Content>
-            <Button.Content hidden>
-                <Icon name='arrow right' />
-            </Button.Content>
-            </Button>
+            <button onClick={() => {this.sendMsg()}}>
+              Send
+            </button>
             </div>
             </div>
         );

@@ -12,6 +12,16 @@
     margin-right: 13px;
   }
 
+  .side-panel-header {
+    font-weight: 800;
+    font-size: 23px;
+    margin: 20px 40px;
+  }
+
+  .side-panel-user-list {
+    margin: 0 50px;
+  }
+
   .list {
     width: 30%;
     background: #F3F3F3;
