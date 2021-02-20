@@ -32,10 +32,8 @@ export function send(req, res) {
             tone: dominantTone && dominantTone.tone_name ? dominantTone.tone_name : '',
             sent_from: req.body.user,
           });
-          console.log(msg);
           msg.save()
             .then(doc => {
-              console.log(req.user);
               io.sockets.emit('get_msg', doc);
   
               res.sendStatus(200)

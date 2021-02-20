@@ -1,7 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import './send.css'
-import { Form, TextArea, Button, Icon } from 'semantic-ui-react'
 import { socket } from './socket';
 
 
@@ -14,10 +13,7 @@ class Send extends React.Component {
         msgData: [],
       }
     }
-  
-    // eslint-disable-next-line react/no-typos
-    // componentDidMount() {
-    // }
+    
     sendMsg = () => {
         const target = document.getElementById('msgBox');
         console.log(target.value);
@@ -40,17 +36,12 @@ class Send extends React.Component {
       return (
         <div className="inputBox">
             <div className="textBox">
-            <Form style={{height: '100px', backgroundColor: '#959eb1'}}>
-            <TextArea id="msgBox" placeholder='Type Your Message'/>
-            </Form>
+            <input id="msgBox" placeholder='Type Your Message'/>
             </div>
             <div className="sendBtn">
-            <Button animated onClick={() => {this.sendMsg()}}>
-            <Button.Content visible>Send</Button.Content>
-            <Button.Content hidden>
-                <Icon name='arrow right' />
-            </Button.Content>
-            </Button>
+            <button onClick={() => {this.sendMsg()}}>
+              Send
+            </button>
             </div>
             </div>
         );

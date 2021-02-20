@@ -1,17 +1,16 @@
 import React from 'react';
 import './login.css';
-import { Button } from 'semantic-ui-react';
 import { Input } from 'semantic-ui-react';
 import { socket } from './socket';
 import PropTypes from 'prop-types';
 
 
 class Login extends React.Component {
-    // eslint-disable-next-line no-useless-constructor
     constructor(props) {
       super(props);
       this.state = {
         msgData: [],
+        activePage: 'signin'
       }
     }
 
@@ -19,8 +18,27 @@ class Login extends React.Component {
       updateState: PropTypes.func.isRequired,
     };
   
-    // eslint-disable-next-line react/no-typos
     componentDidMount() {}
+
+    register = () => {
+      const userName = document.getElementById('userNameRgstr');
+      const password = document.getElementById('passwordRgstr');
+        fetch('/api/register/add', {
+            method: 'post',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({ 
+              userName: userName.value,
+              password: password.value })
+        }).then(() => {
+          this.props.updateState({
+            login : 'block',
+            chat : 'none',
+            register: 'none'
+          });
+        });
+        userName.value = null;
+        password.value = null;
+    }
 
     login = () => {
       const userName = document.getElementById('userName');
@@ -36,6 +54,7 @@ class Login extends React.Component {
             if (usrData.length !== 0) {
             if (usrData[0].password === password.value) {
               socket.emit('add_user', userName.value);
+              localStorage.setItem('active_user', userName.value);
               userName.value = null;
               password.value = null;
               this.props.updateState({
@@ -46,56 +65,110 @@ class Login extends React.Component {
               
             }
             else {
-              alert('Paswword is incorrect');
+              alert('Password is incorrect');
             }
           }
           else {
             alert('User not found');
           }
-
-            
         });
        
     }
 
-    render() {
-      return (
-        <div className="card">
-        <div className="form">
-          <div>
+    displayRegister = () => {
+      const style = {};
+      style.opacity= this.state.activePage === 'signup' ? '1' : '0.4';
+      style.width = this.state.activePage === 'signup' ? '60%' : '40%';
+      style.transition = '1.5s';
+
+      const view = <div className="card" style={style}>
+      <div className="form">
+        <div className="placeholder">
+          <Input id='userNameRgstr' placeholder='Enter Username ' />
+        </div>
+        <div className="placeholder right" style={{
+          margin: '39px 0'
+        }}>
+          <Input id='passwordRgstr' placeholder='Password' type='password' />
+        </div>
+        <div className="button-container">
+        
+        <button className="btn-sec" style={{
+          margin: '10px 0'
+          }}
+          onClick={() => {
+            
+            this.setState({activePage: 'signin'})
+  
+          }}>
+          SIGN IN
+        </button>
+        <button className="btn-sec" style={{
+         margin: '10px 0'
+         }}
+         onClick={() => {
+            this.register()
+         }}>
+          REGISTER
+        </button>
+        </div>
+        </div>
+      </div>;
+
+      return view;
+    }
+
+    displayLogin =() => {
+      const style = {};
+      style.opacity= this.state.activePage === 'signin' ? '1' : '0.4';
+      style.width = this.state.activePage === 'signin' ? '60%' : '40%';
+      style.transition = '1.5s';
+
+      const view = <div className="card2" style={style}>
+        <div className="form2">
+          <div className="placeholder">
             <Input id='userName' placeholder='Enter Username ' />
           </div>
-          <div style={{
-            margin: '10px 0'
+          <div className="placeholder right" style={{
+            margin: '39px 0'
           }}>
             <Input id='password' placeholder='Password' type='password' />
           </div>
-          <Button primary style={{
+          <div className="button-container">
+          
+          <button className="btn-sec" style={{
+            margin: '10px 0'
+            }}
+            onClick={() => {
+              this.setState({activePage: 'signup'})
+            }}>
+            SIGN UP
+          </button>
+          <button className="btn-pri" style={{
            margin: '10px 0'
            }}
            onClick={() => {
               this.login()
            }}>
-            Login
-          </Button>
-          <div >
-            New User ?
+            LOGIN
+          </button>
           </div>
-          <Button secondary style={{
-            margin: '10px 0'
-            }}
-            onClick={() => {
-              this.props.updateState({
-                login : 'none',
-                chat : 'none',
-                register: 'block'
+          </div>
+        </div>;
+        return view;
+    }
 
-              });
-            }}>
-            Sign Up
-          </Button>
-          </div>
+    render() {
+      return (
+        <div style={{height: '100%'}}>
+          <div className="header"></div>
+          <div className="container">
+          {this.displayRegister()}
+          {this.displayLogin()}
         </div>
+          </div>
+        
+        
       );
     }
   }

@@ -67,7 +67,6 @@ class Box extends React.Component {
               obj.sent_from = element.sent_from;
               msgData.push(obj);
             });
-            console.log(msgData)
             this.setState({ 
               msgData,
               msgLen: msgData.length
@@ -88,20 +87,30 @@ class Box extends React.Component {
       else 
         return 'normal.svg'
     }
+
+    displayMessage = msg => {
+      const activeUser = localStorage.getItem('active_user')
+      console.log(activeUser)
+      return (
+      <div className={` msg-bubble ${activeUser === msg.sent_from ? 'active-msg' : ''}`}>
+          <div className={`user-name ${activeUser === msg.sent_from ? 'active' : ''}`}> 
+            <img className="user-logo" src={`${activeUser === msg.sent_from ? 'user-black.svg' : 'user-red.svg'}`} alt="select"/>
+              {msg.sent_from}
+            </div>
+          <div className={`message ${activeUser === msg.sent_from ? 'active' : ''}`}>
+          <div className="msg">{msg.msg}</div>
+          <div style={{display: 'flex'}}><img src={this.setImage(msg.tone)} style={{width: '30px'}} alt='emoji'/></div>
+          </div>
+          <div className="time">{new Date(`${msg.time}`).toLocaleTimeString() } ({new Date(`${msg.time}`).toDateString()})</div>
+        </div>
+        );
+    }
   
     render() {
       return (
-        <div style={{ overflow: 'overlay'}}>
+        <div className="chat-container">
         {this.state.msgData ? this.state.msgData.map(msg => 
-        <div>
-          <div> {msg.sent_from}
-            </div>
-          <div className="message">
-          <div className="msg">{msg.msg}</div>
-          <div><img src={this.setImage(msg.tone)} style={{width: '30px'}} alt='emogi'/></div>
-          <div className="time">{new Date(`${msg.time}`).toLocaleTimeString() } ({new Date(`${msg.time}`).toDateString()})</div>
-          </div>
-        </div>
+          this.displayMessage(msg)
           ): null}
           <div style={{ float:"left", clear: "both" }}
              ref={(el) => { this.messagesEnd = el; }}>
