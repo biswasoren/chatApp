@@ -113,3 +113,10 @@
   text-align: center;
   cursor: pointer;
 }
+
+.logo {
+  display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: 55px;
+}

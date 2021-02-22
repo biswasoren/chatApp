@@ -81,3 +81,10 @@
     width: 100%;
     border: 0px;
   }
+
+  @media screen and (max-width: 400px) {
+    .container {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+      height: 100%;
+    }
+  }

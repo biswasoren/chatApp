@@ -33,7 +33,9 @@ class ChatBox extends React.Component {
     render() {
       return (
         <div style={{height: '100%'}}>
-          <div className="header"></div>
+          <div className="header">
+            <img src="icon.svg" alt="icon"/>
+          </div>
           <div className="container">
             <div className="nav"> </div>
         <div style={{width: '90%'}}>

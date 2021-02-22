@@ -161,7 +161,9 @@ class Login extends React.Component {
     render() {
       return (
         <div style={{height: '100%'}}>
-          <div className="header"></div>
+          <div className="header">
+            <div className="logo"><img src="icon.svg" alt="icon"></img></div>
+            </div>
           <div className="container">
           {this.displayRegister()}
           {this.displayLogin()}
