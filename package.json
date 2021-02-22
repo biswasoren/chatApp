@@ -24,9 +24,8 @@
     "request": "^2.88.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.87.1",
-    "socker.io": "^0.0.0-alpha-beta",
     "socket.io": "^2.4.0",
-    "socket.io-client": "^2.2.0",
+    "socket.io-client": "^2.4.0",
     "uuid": "^3.3.2",
     "watson-developer-cloud": "^4.0.1"
   },
