@@ -15,7 +15,7 @@ class Box extends React.Component {
             const msgData = this.state.msgData;
             const obj = {};
             obj.msg = data.message;
-            obj.time = data.time;
+            obj.time = this.timeSince(new Date(data.time));
             obj.tone = data.tone;
             obj.sent_from = data.sent_from;
 
@@ -46,6 +46,33 @@ class Box extends React.Component {
       this.messagesEnd.scrollIntoView({ behavior: "smooth" });
   };
 
+    timeSince = (date) => {
+        let seconds = Math.floor((new Date() - date) / 1000);
+
+        let interval = seconds / 31536000;
+
+        if (interval > 1) {
+            return Math.floor(interval) + " years";
+        }
+        interval = seconds / 2592000;
+        if (interval > 1) {
+            return Math.floor(interval) + " months";
+        }
+        interval = seconds / 86400;
+        if (interval > 1) {
+            return Math.floor(interval) + " days";
+        }
+        interval = seconds / 3600;
+        if (interval > 1) {
+            return Math.floor(interval) + " hours";
+        }
+        interval = seconds / 60;
+        if (interval > 1) {
+            return Math.floor(interval) + " minutes";
+        }
+        return Math.floor(seconds) + " seconds";
+    }
+
   getMessages = () => {
       fetch("/api/message/getAll")
           .then((results) => results.json())
@@ -55,7 +82,7 @@ class Box extends React.Component {
               data.forEach((element) => {
                   const obj = {};
                   obj.msg = element.message;
-                  obj.time = element.time;
+                  obj.time = this.timeSince(new Date(element.time));
                   obj.tone = element.tone;
                   obj.sent_from = element.sent_from;
                   msgData.push(obj);
@@ -81,7 +108,6 @@ class Box extends React.Component {
 
   displayMessage = (msg) => {
       const activeUser = localStorage.getItem("active_user");
-      console.log(activeUser);
       return (
           <div
               className={` msg-bubble ${
@@ -115,8 +141,7 @@ class Box extends React.Component {
                   </div>
               </div>
               <div className="time">
-                  {new Date(`${msg.time}`).toLocaleTimeString()} (
-                  {new Date(`${msg.time}`).toDateString()})
+                  {msg.time} ago
               </div>
           </div>
       );

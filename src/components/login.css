@@ -60,9 +60,25 @@
     font-size: 16px;
   }
 
+  .form2 .placeholder.right .ui.input>input {
+    width: 258px;
+    height: 56px;
+    border-radius: 12px 0 0 12px;
+    color: black;
+    font-size: 16px;
+  }
+
 .form .placeholder .ui.input>input {
   background: rgba(12, 15, 81, 0.4);
   border-radius: 0 12px 12px 0;
+  width: 258px;
+  height: 56px;
+  font-size: 16px;
+}
+
+.form .placeholder.right .ui.input>input {
+  background: rgba(12, 15, 81, 0.4);
+  border-radius: 12px 0 0 12px;
   width: 258px;
   height: 56px;
   font-size: 16px;
