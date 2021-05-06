@@ -1,4 +1,4 @@
-# Chat App
+# Awesome Chat App
 
 ## Available Scripts
 

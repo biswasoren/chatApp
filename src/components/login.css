@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgba(9, 11, 58, 0.72);
+    background: rgba(201, 203, 255, 0.66);
     height: 100%;
     color: white;
   }
@@ -32,7 +32,8 @@
     flex-direction: column;
     justify-content: center;
     color: white;
-    background: rgba(9, 11, 58, 0.35);
+    background: 
+    rgba(0, 10, 243, 0.35);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
 }
@@ -60,7 +61,7 @@
   }
 
 .form .placeholder .ui.input>input {
-  background: rgba(31, 32, 64, 0.4);
+  background: rgba(12, 15, 81, 0.4);
   border-radius: 0 12px 12px 0;
   width: 258px;
   height: 56px;
@@ -74,8 +75,12 @@
   flex-direction: row-reverse;
 }
 
-.form .placeholder .ui.input>input:focus {
-  color: white;
+.form .placeholder .ui.input>input {
+  color: rgb(207, 203, 252);
+}
+
+.form .placeholder .ui.input>input::placeholder {
+  color:  rgb(207, 203, 252);
 }
 
 .form2 .placeholder .ui.input>input:focus {
@@ -102,8 +107,8 @@
   cursor: pointer;
 }
 .btn-sec{
-  background: rgba(31, 32, 64, 0.8);
-  border-radius: 12px;
+  background: rgba(12, 15, 81, 0.7);
+  border-radius: 8px;
   width: 125px;
   height: 45px;
   color: white;
@@ -112,11 +117,4 @@
   line-height: 28px;
   text-align: center;
   cursor: pointer;
-}
-
-.logo {
-  display: flex;
-    align-items: center;
-    height: 100%;
-    margin-left: 55px;
 }
