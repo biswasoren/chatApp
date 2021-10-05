@@ -10,43 +10,43 @@
     background: #F3F3F3;
     border-radius: 12px;
     margin-right: 13px;
-  }
+}
 
-  .side-panel-header {
+.side-panel-header {
     font-weight: 800;
     font-size: 23px;
     margin: 20px 40px;
-  }
+}
 
-  .side-panel-user-list {
+.side-panel-user-list {
     margin: 0 50px;
-  }
+}
 
-  .list {
+.list {
     width: 30%;
     background: #F3F3F3;
     border-radius: 18px;
-  }
+}
 
-  .nav {
-    width: 15%;
+.nav {
+    width: 25%;
     background: rgba(0, 10, 243, 0.35);
-  }
+}
 
-  .container {
+.container {
     height: calc(100% - 53px);
     display: flex;
-  }
+}
 
-  .message-info {
+.message-info {
     display: flex;
     position: relative;
     flex-direction: column;
     width: 70%;
     height: 100%;
-  }
+}
 
-  .message-header {
+.message-header {
     display: flex;
     height: 10%;
     background: #F3F3F3;
@@ -59,26 +59,27 @@
     align-items: center;
     padding-left: 30px;
     color: #000000;
-  }
+}
 
-  input {
+input {
     height: 99%;
     outline: none;
     width: 100%;
     border: 0px;
     background: rgba(196, 196, 196, 0.37);
     padding: 0 10px;
-  }
+}
 
-  button {
+button {
     outline: none;
     width: 100%;
     border: 0px;
-  }
+}
 
-  @media screen and (max-width: 400px) {
+@media only screen and (max-width: 768px) {
     .container {
-      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
-      height: 100%;
+        width: 100%;
+        /* The width is 100%, when the viewport is 800px or smaller */
+        height: 100%;
     }
-  }
+}

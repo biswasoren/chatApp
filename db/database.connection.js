@@ -1,5 +1,5 @@
-import dbConfig from "../config/database.config";
 import mongoose from "mongoose";
+import dbConfig from "../config/database.config";
 
 mongoose.Promise = require("bluebird");
 
@@ -16,8 +16,8 @@ export function initDb() {
     console.info("Mongoose connected to", dbConfig.url);
   });
 
-  process.on("SIGINT", function () {
-    mongoose.connection.close(function () {
+  process.on("SIGINT", () => {
+    mongoose.connection.close(() => {
       console.log(
         "Mongoose default connection is disconnected due to application termination"
       );

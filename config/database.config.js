@@ -1,10 +1,10 @@
+import dotenv from 'dotenv';
+
+dotenv.config();
 module.exports = {
-  url: "mongodb+srv://biswa:ff6gI7MndxSxl4KK@cluster0.n2l11.mongodb.net",
+  url: process.env.MONGO_URl,
   options: {
-    poolsize: 20,
-    db: {
-      safe: true,
-    },
+    useUnifiedTopology: true,
     useNewUrlParser: true,
   },
 };

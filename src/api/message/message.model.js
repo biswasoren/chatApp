@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const msgSchema = new mongoose.Schema({
   //   mId: {
@@ -21,4 +21,4 @@ const msgSchema = new mongoose.Schema({
     unique: false,
   },
 });
-module.exports = mongoose.model("Message", msgSchema);
+module.exports = mongoose.model('Message', msgSchema);
