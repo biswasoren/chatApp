@@ -13,11 +13,9 @@ class Send extends React.Component {
 
   sendMsg = () => {
     const target = document.getElementById('msgBox');
-    console.log(target.value);
 
     socket.emit('which_user', null);
     socket.on('this_user', (user) => {
-      console.log(user);
       if (target.value) {
         fetch('/api/message/send', {
           method: 'post',

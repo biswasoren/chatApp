@@ -12,7 +12,6 @@ const tone_analyzer = new ToneAnalyzerV3({
 
 export function send(req, res) {
   const io = req.sockets;
-  console.log(req.body);
   if (req.body.message) {
     const toneParams = {
       tone_input: { text: req.body.message },
@@ -38,7 +37,6 @@ export function send(req, res) {
         msg
           .save()
           .then((doc) => {
-            console.log(doc);
             io.emit('get_msg', doc);
 
             res.sendStatus(200);
