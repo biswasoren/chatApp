@@ -1,4 +1,4 @@
-const User = require("./user.model");
+const User = require('./user.model');
 
 export function add(req, res) {
   const user = new User({
