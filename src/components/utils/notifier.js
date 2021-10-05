@@ -12,12 +12,9 @@ function Notifier(props) {
     setFlag(props.flag);
   }, [flag]);
 
-  console.log(props.flag, flag);
-
   return flag ? (
     <div className="notice-container">
       <div className="popup">
-        {' '}
         <img
           src="check.png"
           alt="success"

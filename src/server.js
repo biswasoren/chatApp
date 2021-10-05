@@ -56,8 +56,6 @@ console.log('app running on port ', port);
 io.sockets.on('connection', (socket) => {
   connections.push(socket);
 
-  console.log(`${connections.length} connected`);
-
   socket.on('add_user', (data) => {
     users.push(data);
     socket.user = data;
@@ -67,7 +65,6 @@ io.sockets.on('connection', (socket) => {
       next();
     });
     io.sockets.emit('all_users', users);
-    console.log(users);
   });
 
   socket.on('which_user', (data) => {
@@ -80,8 +77,6 @@ io.sockets.on('connection', (socket) => {
 
     connections.splice(index, 1);
     users.splice(userIndex, 1);
-    console.log(`${connections.length} Disconnected`);
     io.sockets.emit('all_users', users);
-    console.log(users);
   });
 });
