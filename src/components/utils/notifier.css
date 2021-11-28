@@ -11,12 +11,11 @@
     height: 3rem;
     width: 16rem;
     color: black;
-    background-color: #AFB5EB;
     border-radius: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: fadeOut 6s ease-out;
+    animation: fadeOut 5s ease-out;
     opacity: 0;
     z-index: -10;
 }

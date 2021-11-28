@@ -99,17 +99,6 @@ class Login extends React.Component {
                 margin: '10px 0',
               }}
               onClick={() => {
-                this.setState({ activePage: 'signin' });
-              }}
-            >
-              SIGN IN{' '}
-            </button>{' '}
-            <button
-              className="btn-sec"
-              style={{
-                margin: '10px 0',
-              }}
-              onClick={() => {
                 this.register();
               }}
             >

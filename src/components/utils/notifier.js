@@ -1,17 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './notifier.css';
 
 function Notifier(props) {
-  const [flag, setFlag] = useState(props.flag);
-  if (flag) {
-    setTimeout(() => {
-      setFlag(false);
-    }, '5000');
-  }
-  useEffect(() => {
-    setFlag(props.flag);
-  }, [flag]);
+  const { message, flag } = props;
 
+  console.log(flag);
   return flag ? (
     <div className="notice-container">
       <div className="popup">
@@ -20,7 +13,7 @@ function Notifier(props) {
           alt="success"
           style={{ height: '2rem', marginRight: '0.5rem' }}
         />{' '}
-        {props.message}{' '}
+        {message}{' '}
       </div>{' '}
     </div>
   ) : null;
